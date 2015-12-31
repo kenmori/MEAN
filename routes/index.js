@@ -4,10 +4,15 @@
  */
 
 exports.index = function(req, res){
-	var id = req.params.id;
-	var name = req.params.name;
+	var msg = '';
+	var cookie = req.cookies;
+	if(req.session.login !== true || cookie === undefined){
+		msg = 'ログインしてください。';
+	} else {
+		msg = 'ID:' + req.session.name + 'でログインしています';
+	}
 	res.render('index', {
 		title: 'Express',
-		msg: 'こんにちは'+ id + '番の' + name + 'さん'
+		msg: msg
 	});
 };
