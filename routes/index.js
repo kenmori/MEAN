@@ -4,14 +4,12 @@
  */
 
 exports.index = function(req, res){
-	var id = req.query.id;
-	var name = req.query.name;
-	var msg = 'こんにちは!';
-	if(id != undefined){
-		msg += 'ID=' + id + '番';
-	}
-	if(name != undefined){
-		msg += name + 'さん';
+	var msg = '';
+	var cookie = req.cookies;
+	if(req.session.login !== true || cookie === undefined){
+		msg = 'ログインしてください。';
+	} else {
+		msg = 'ID:' + req.session.name + 'でログインしています';
 	}
 	res.render('index', {
 		title: 'Express',
