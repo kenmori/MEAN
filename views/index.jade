@@ -22,6 +22,10 @@ block content
 	h1= title
 	p Welcome to #{title}
 	p#msg #{msg}
+	
+	table(border='1')
+		each data in datas
+			include data
 	form#form1(method='post', action='javascript:return false:')
 		table
 			tr
