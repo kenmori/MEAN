@@ -10,13 +10,13 @@ exports.index = function(req, res) {
                 if (err) {
                         console.log(err);
                 } else {
-                        client.query("SELECT * from table01", function(result) {
+                        client.query("SELECT * from mynavi_db", function(error,result) {
                                 console.log("データベース繋がったよ");
                                 
                                 res.render('index', {
                                         title : 'Express',
                                         msg : 'MyDataの一覧リスト',
-                                        data: result
+                                        datas : result.rows
                                 });
                         });
                 }
