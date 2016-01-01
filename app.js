@@ -9,6 +9,8 @@ var express = require('express')
   , index_post = require('./routes/index_post')
   , add = require('./routes/add')
   , create = require('./routes/create')
+  , edit = require('./routes/edit')
+  , update = require('./routes/update')
   , http = require('http')
   , path = require('path');
 
@@ -37,6 +39,8 @@ app.get('/users', user.list);
 app.get('/index/:id', routes.index);
 app.get('/index/:id/:name', routes.index);
 app.get('/add', add.add);
+app.get('/edit/:id', edit.edit);
+app.post('/update', update.update);
 app.post('/create', create.create);
 app.post('/', index_post.index);
 

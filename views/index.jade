@@ -12,7 +12,8 @@ block content
       th tel
       each data in datas
         tr
-            td= data.id
+            td
+                a(href='/edit/#{data.id}') #{data.id}
             td= data.name
             td= data.mail
             td= data.tel
