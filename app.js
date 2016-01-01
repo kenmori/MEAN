@@ -7,6 +7,8 @@ var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , index_post = require('./routes/index_post')
+  , add = require('./routes/add')
+  , create = require('./routes/create')
   , http = require('http')
   , path = require('path');
 
@@ -34,6 +36,8 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/index/:id', routes.index);
 app.get('/index/:id/:name', routes.index);
+app.get('/add', add.add);
+app.post('/create', create.create);
 app.post('/', index_post.index);
 
 http.createServer(app).listen(app.get('port'), function(){
