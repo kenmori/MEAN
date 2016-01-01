@@ -10,7 +10,7 @@ exports.index = function(req, res) {
                 if (err) {
                         console.log(err);
                 } else {
-                        client.query("SELECT * from table01", function(error,result) {
+                        client.query("SELECT * from mynavi_db", function(error,result) {//db名が違うとrows.lengthでundefined
                                 console.log("データベース繋がったよ");
                                 
                                 res.render('index', {
