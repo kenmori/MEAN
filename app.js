@@ -11,6 +11,8 @@ var express = require('express')
   , create = require('./routes/create')
   , edit = require('./routes/edit')
   , update = require('./routes/update')
+  , del = require('./routes/delete')
+  , remove = require('./routes/remove')
   , http = require('http')
   , path = require('path');
 
@@ -41,9 +43,12 @@ app.get('/index/:id/:name', routes.index);
 app.get('/add', add.add);
 app.get('/edit/:id', edit.edit);
 app.post('/update', update.update);
+app.get('/delete/:id', del.del);
+app.post('/remove', remove.remove);
 app.post('/create', create.create);
 app.post('/', index_post.index);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
+
