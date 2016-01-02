@@ -13,6 +13,7 @@ var express = require('express')
   , update = require('./routes/update')
   , del = require('./routes/delete')
   , remove = require('./routes/remove')
+  , find = require('./routes/find')
   , http = require('http')
   , path = require('path');
 
@@ -44,6 +45,8 @@ app.get('/add', add.add);
 app.get('/edit/:id', edit.edit);
 app.post('/update', update.update);
 app.get('/delete/:id', del.del);
+app.get('/find', find.find);
+app.post('/find', find.find_post);
 app.post('/remove', remove.remove);
 app.post('/create', create.create);
 app.post('/', index_post.index);
