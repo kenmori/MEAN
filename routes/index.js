@@ -10,10 +10,7 @@ exports.index = function(req, res) {
 		if (err) {
 			console.log(err);
 		} else {
-			client.on('drain', function(){
-				client.end.bind(client);
-			});
-			var query = client.query("SELECT * from mynavi_db", function(error,result) {
+			client.query("SELECT * from mynavi_db", function(error,result) {
 				console.log("データベース繋がったよ");
 				res.render('index', {
 					title : 'Express',
