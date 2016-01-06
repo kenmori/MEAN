@@ -3,7 +3,8 @@
 # myexapp
 
 **/Users/No51/Documents/workspace/myexapp**
-bash cmd **cm**
+
+bash cmd **cn**
 
 ## Usage
 
