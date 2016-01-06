@@ -2,6 +2,7 @@
 
 # myexapp
 
+**/Users/No51/Documents/workspace/myexapp**
 
 
 ## Usage
