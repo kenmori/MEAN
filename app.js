@@ -14,6 +14,7 @@ var express = require('express')
   , del = require('./routes/delete')
   , remove = require('./routes/remove')
   , find = require('./routes/find')
+  , flex = require('./routes/flex')
   , http = require('http')
   , path = require('path');
 
@@ -50,8 +51,8 @@ app.post('/find', find.find_post);
 app.post('/remove', remove.remove);
 app.post('/create', create.create);
 app.post('/', index_post.index);
+app.get('/flex', flex.flex);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
-

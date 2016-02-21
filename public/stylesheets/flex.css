@@ -1,0 +1,48 @@
+body {
+	margin: 0;
+	height: 100%;
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+ul {
+	list-style-type: none;
+	margin:0;
+	padding-left: 0;
+	display: flex;
+	display: -webkit-flex;/*safri*/
+	display: -webkit-box;/*Android2~4*/
+	/*justify-content: space-around;*/
+	/*余白を左右それぞれ撮った後均等余白*/
+	justify-content: space-between;
+	-webkit-box-pack:justify;//Android2~4
+	/*-webkit-justify-content: space-around;*/要素が左右にくっつきその後余白均等
+	-webkit-justify-content: space-between;
+}
+li {
+	display:block;
+	/*flex: 1;幅は統一*/
+	-webkit-box-flex: 1;
+	/*Android2~4*/
+	/*-webkit-flex: 1;*/
+	flex: auto;
+	/*文字の分量にあった幅になる*/
+	-webkit-flex: auto;
+}
+li:not(:last-child) {
+	border-right: 1px solid rgba(0, 255, 255, 0.2);
+}
+li a {
+	display: inline-block;
+	padding: .5em;
+	text-align: center;
+	text-decoration: none;
+	width: 100%;
+	color: #fff;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.5);
+	border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+	border-top: 2px solid rgba(255, 255, 255, 0.2);
+	background-color: #069;
+}
+a {
+  color: #00B7FF;
+}
